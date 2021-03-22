@@ -4,17 +4,15 @@ import java.util.Iterator;
 import java.util.Properties;
 import java.util.Random;
 import java.util.Set;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import locators.test11Locators;
 import utilities.Action;
 import utilities.util;
 import variables.test11Variables;
-
-
 
 public class reusableClass {
 	WebDriver driver;
@@ -65,5 +63,10 @@ public void test17(By locator, By cButton, By cButton2) {
 		String win1=it.next();
 		String win2=it.next();
 		driver.switchTo().window(win2);
+	}
+	
+	public void asserting(String erro_msg, String success_msg, String expected, String value) {
+		Assert.assertEquals(erro_msg,expected,value);
+		System.out.println(success_msg);
 	}
 }
